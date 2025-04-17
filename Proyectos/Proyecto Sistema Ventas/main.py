@@ -5,7 +5,7 @@ Versión: 0.1
 Sistema de Gestión de Ventas que nos permita ingresar, almacenar y analizar datos de ventas.
 """
 import os
-from modulo import ingresar_ventas, guardar_ventas
+from modulo import ingresar_ventas, guardar_ventas, analisis_ventas
 
 
 def limpiar_pantalla():
@@ -40,7 +40,9 @@ def menu():
             guardar_ventas(ventas)
             pausar()
         elif opcion == '3':
+            limpiar_pantalla()
             print('\n ---- Analisis de Ventas ----')
+            analisis_ventas()
             pausar()
         elif opcion == '4':
             print('\n Gracias por usar el sistema. Hasta pronto!')
