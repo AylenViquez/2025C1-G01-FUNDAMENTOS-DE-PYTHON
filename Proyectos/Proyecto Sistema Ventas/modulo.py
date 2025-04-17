@@ -1,3 +1,5 @@
+import csv
+
 def ingresar_ventas(lista_ventas):
     while True:
         try: 
@@ -28,3 +30,12 @@ def ingresar_ventas(lista_ventas):
         else: 
             print ('Opción no valida')
         
+def guardar_ventas(ventas):
+    if not ventas:
+        print('No hay ventas que guardar en el CSV')
+    else:
+        with open('ventas.csv','w',newline='',encoding='utf-8') as csv:
+            guardar = csv.di (csv,fieldnames=['curso','cantidad','precio','fecha','cliente'])
+            guardar.writeheader()
+            guardar.writerows(ventas)
+        print('Datos guardados exitosamente!')
